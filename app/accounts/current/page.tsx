@@ -56,11 +56,11 @@ export default function CurrentAccount() {
           <h2>Account Benefits</h2>
           <div className={styles.benefitsList}>
             <div className={styles.benefit}>Unlimited deposit and withdrawal transactions</div>
-            <div className={styles.benefit}>Free demand drafts and pay orders</div>
+            {/* <div className={styles.benefit}>Free demand drafts and pay orders</div> */}
             <div className={styles.benefit}>Priority banking services</div>
             <div className={styles.benefit}>Dedicated relationship manager</div>
-            <div className={styles.benefit}>Multi-city cheque collection facility</div>
-            <div className={styles.benefit}>Trade finance and forex services</div>
+            {/* <div className={styles.benefit}>Multi-city cheque collection facility</div> */}
+            {/* <div className={styles.benefit}>Trade finance and forex services</div> */}
           </div>
         </div>
 
@@ -81,7 +81,7 @@ export default function CurrentAccount() {
               <h3>Requirements</h3>
               <ul>
                 <li>Valid business registration</li>
-                <li>Minimum average balance ₹10,000</li>
+                <li>Minimum average balance ₹3,000</li>
                 <li>Business vintage of 1 year</li>
                 <li>Satisfactory credit history</li>
               </ul>

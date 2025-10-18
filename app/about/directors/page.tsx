@@ -2,46 +2,105 @@ import styles from './page.module.css';
 
 export default function BoardOfDirectors() {
   const boardMembers = [
-    {
-      name: "Mr. Rajesh Kumar",
+     {
+      name: "Mr. Pandit Sawant",
       designation: "Chairman",
-      image: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400"
+      image: "/16.jpg"
     },
-    {
-      name: "Mrs. Priya Sharma",
+     {
+      name: "Mr. Dilip Chavan",
       designation: "Vice Chairman",
-      image: "https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=400"
+      image: "/6.jpg"
     },
     {
-      name: "Mr. Amit Patel",
+      name: "Mr. Kiran Rane (CA)",
       designation: "Director",
-      image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400"
+      image: "/12.jpg"
     },
-    {
-      name: "Dr. Sunita Verma",
-      designation: "Independent Director",
-      image: "https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=400"
-    },
-    {
-      name: "Mr. Vikash Singh",
+     {
+      name: "Mrs. Sudha Sawant",
       designation: "Director",
-      image: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400"
+      image: "/17.jpg"
+    },
+     {
+      name: "Mr. Manish Sawant",
+      designation: "Director",
+      image: "/8.jpg"
+    },
+     {
+      name: "Dr. Bhakti Gupta",
+      designation: "Director",
+      image: "/10.jpg"
+    },
+      {
+      name: "Mr. Chandrakant Chavan",
+      designation: "Director",
+      image: "/5.jpg"
     },
     {
-      name: "Mrs. Kavita Joshi",
+      name: "Adv. Amol Sawant",
       designation: "Director",
-      image: "https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=400"
+      image: "/1.jpg"
     },
     {
-      name: "Mr. Deepak Gupta",
+      name: "Adv. Sachin Mhatre ",
       designation: "Director",
-      image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400"
+      image: "/2.jpg"
     },
-    {
-      name: "Mrs. Meera Agarwal",
+     {
+      name: "Smt. Sumedha Sawant",
       designation: "Director",
-      image: "https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=400"
-    }
+      image: "/19.jpg"
+    },
+     {
+      name: "Mrs. Dipali Chavan",
+      designation: "Director",
+      image: "/7.jpg"
+    },
+     {
+      name: "Mr. Narayan Gaikwad",
+      designation: "Director",
+      image: "/11.jpg"
+    },
+     {
+      name: "Mr. Dilip Gore",
+      designation: "Director",
+      image: "/9.jpg"
+    },
+     {
+      name: "Mr. Shridhar Kadam",
+      designation: "Expert Director",
+      image: "/15.jpg"
+    },
+     {
+      name: "Mr. Litesh Gada (CA)",
+      designation: "Expert Director",
+      image: "/expert director.jpg"
+    },
+    
+   
+    // {
+    //   name: "Mr. Ajay Sawant",
+    //   designation: "Head of Loan and Advance",
+    //   image: "/4.jpg"
+    // },
+   
+   
+   
+   
+   
+   
+   
+   
+    
+   
+   
+   
+   
+   
+   
+    
+   
   ];
 
   return (

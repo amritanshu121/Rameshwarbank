@@ -2,51 +2,50 @@ import styles from './page.module.css';
 
 export default function ManagementTeam() {
   const managementMembers = [
-    {
-      name: "Mr. Suresh Chandra",
-      designation: "Chief Executive Officer",
-      image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400"
+     {
+      name: "Mr. Sanjay Nikam",
+      designation: "CEO",
+      image: "/20.jpg"
+    },
+     {
+      name: "Mr. Sambhaji Chavan",
+      designation: "Manager",
+      image: "/14.jpg"
     },
     {
-      name: "Mrs. Anita Desai",
-      designation: "Chief Financial Officer",
-      image: "https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=400"
-    },
-    {
-      name: "Mr. Rohit Mehta",
-      designation: "Chief Operating Officer",
-      image: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400"
-    },
-    {
-      name: "Dr. Neha Kapoor",
-      designation: "Chief Risk Officer",
-      image: "https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=400"
-    },
-    {
-      name: "Mr. Arun Kumar",
-      designation: "Head of Operations",
-      image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400"
-    },
-    {
-      name: "Mrs. Pooja Rani",
-      designation: "Head of Human Resources",
-      image: "https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=400"
-    },
-    {
-      name: "Mr. Manoj Tiwari",
-      designation: "Head of Credit",
-      image: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400"
-    },
-    {
-      name: "Mrs. Rekha Jain",
-      designation: "Head of Marketing",
-      image: "https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=400"
-    },
-    {
-      name: "Mr. Sanjay Yadav",
+      name: "Mr. Chandrakant Mandave ",
       designation: "Head of IT",
-      image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400"
-    }
+      image: "/head of it.jpg"
+    },
+    
+    {
+      name: "Mr. Ankush Sawant",
+      designation: "Head of Loan and Advance",
+      image: "/head of loan and advance.jpg"
+    },
+    {
+      name: "Mr. Sanjay  Sawant",
+      designation: "Head of Deposit",
+      image: "/head of deposit.jpg"
+    },
+    
+    
+   
+    
+    //   name: "Mr. Manoj Tiwari",
+    //   designation: "Head of Credit",
+    //   image: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400"
+    // },
+    // {
+    //   name: "Mrs. Rekha Jain",
+    //   designation: "Head of Marketing",
+    //   image: "https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=400"
+    // },
+    // {
+    //   name: "Mr. Sanjay Yadav",
+    //   designation: "Head of IT",
+    //   image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400"
+    // }
   ];
 
   return (

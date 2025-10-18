@@ -1,18 +1,22 @@
 "use client";
-import { Home } from "lucide-react";
+import { Shield } from "lucide-react"; // Represents secured loan
 import styles from "../page.module.css";
 import { useState, useEffect } from "react";
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer, Legend } from "recharts";
 
-export default function BusinessLoan() {
+export default function GoldLoanPage() {
   // EMI Calculator State
   const [loanAmount, setLoanAmount] = useState<number>(500000);
-  const [interestRate, setInterestRate] = useState<number>(12);
-
   const [tenure, setTenure] = useState<number>(60); // in months
   const [emi, setEmi] = useState<number>(0);
   const [totalInterest, setTotalInterest] = useState<number>(0);
   const [totalPayment, setTotalPayment] = useState<number>(0);
+
+  // Loan type: 'Standard' or 'Overdraft'
+  const [loanType, setLoanType] = useState<"standard" | "overdraft">("standard");
+
+  // Interest rate fixed at 9% for both
+  const interestRate = 9; 
 
   // Helper to format currency in ₹
   const formatCurrency = (value: number) =>
@@ -22,35 +26,27 @@ export default function BusinessLoan() {
       maximumFractionDigits: 0,
     }).format(value);
 
-  // Auto calculate EMI whenever values change
+  // Calculate EMI
   useEffect(() => {
-    const r = interestRate / 100 / 12; // monthly interest rate
-    const n = tenure; // months
-    const p = loanAmount; // principal
+    const r = interestRate / 100 / 12;
+    const n = tenure;
+    const p = loanAmount;
 
-    if (r > 0) {
-      const emiValue =
-        (p * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+    const emiValue = (p * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+    const totalPay = emiValue * n;
+    const interest = totalPay - p;
 
-      const totalPay = emiValue * n;
-      const interest = totalPay - p;
-
-      setEmi(emiValue);
-      setTotalPayment(totalPay);
-      setTotalInterest(interest);
-    } else {
-      setEmi(p / n);
-      setTotalPayment(p);
-      setTotalInterest(0);
-    }
-  }, [loanAmount, interestRate, tenure]);
+    setEmi(emiValue);
+    setTotalPayment(totalPay);
+    setTotalInterest(interest);
+  }, [loanAmount, tenure]);
 
   const pieData = [
     { name: "Principal", value: loanAmount },
     { name: "Interest", value: totalInterest },
   ];
 
-  const COLORS = ["#4CAF50", "#FF5733"];
+  const COLORS = ["#4CAF50", "#FF5733"]; // Gold for principal
 
   return (
     <div className={styles.container}>
@@ -58,20 +54,33 @@ export default function BusinessLoan() {
       <div className={styles.hero}>
         <div className={styles.heroContent}>
           <div className={styles.iconContainer}>
-            <Home size={60} />
+            <Shield size={60} />
           </div>
-          <h1 className={styles.title}>Business Loan</h1>
+          <h1 className={styles.title}>Gold Loan</h1>
           <p className={styles.subtitle}>
-            Grow your business with our flexible Business Loans. Funding made easy.
+            Get instant credit against your gold with our Gold Loan & Overdraft facility.
           </p>
         </div>
       </div>
 
       <div className={styles.content}>
+        {/* Loan Type Selector */}
+        <div className={styles.section}>
+          <h2>Choose Loan Type</h2>
+          <div>
+            <button onClick={() => setLoanType("standard")} style={{marginRight: "10px", backgroundColor: loanType === "standard" ? "#FFD700" : "#eee"}}>Standard Gold Loan</button>
+            <button onClick={() => setLoanType("overdraft")} style={{backgroundColor: loanType === "overdraft" ? "#FFD700" : "#eee"}}>Overdraft Against Gold</button>
+          </div>
+        </div>
+
         {/* Purpose */}
         <div className={styles.section}>
           <h2>Purpose</h2>
-          <p>For starting, expanding, or upgrading your business operations.</p>
+          <p>
+            {loanType === "standard"
+              ? "For personal or business financial needs using your gold as collateral."
+              : "For flexible overdraft facility against your gold to meet short-term financial needs."}
+          </p>
         </div>
 
         {/* Loan Details */}
@@ -79,20 +88,20 @@ export default function BusinessLoan() {
           <h2>Loan Details</h2>
           <div className={styles.loanDetails}>
             <div className={styles.detailCard}>
-              <h3>Range of ROI</h3>
-              <p>10.00% to 15.00%</p>
+              <h3>Rate of Interest</h3>
+              <p>9% (Fixed)</p>
             </div>
             <div className={styles.detailCard}>
               <h3>Tenure</h3>
-              <p>Up to 120 months</p>
+              <p>Up to 60 months</p>
             </div>
             <div className={styles.detailCard}>
               <h3>Eligibility</h3>
-              <p>Based on business revenue, repayment capacity, and credit history.</p>
+              <p>Based on the purity and value of gold offered and credit history.</p>
             </div>
             <div className={styles.detailCard}>
               <h3>Maximum Loan Amount</h3>
-              <p>Rs. 500 lacs (based on eligibility).</p>
+              <p>As per gold value provided as security.</p>
             </div>
           </div>
         </div>
@@ -101,11 +110,11 @@ export default function BusinessLoan() {
         <div className={styles.section}>
           <h2>USP</h2>
           <ul>
-            <li>Quick Disbursal for Business Needs</li>
+            <li>Quick Disbursal Against Gold</li>
             <li>Flexible Repayment Options</li>
-            <li>High Loan Eligibility</li>
+            <li>Higher Loan Eligibility Based on Gold Value</li>
             <li>Minimal Documentation & Transparent Process</li>
-            <li>Personalized Assistance for Businesses</li>
+            <li>Personalized Assistance for Borrowers</li>
           </ul>
           <p className={styles.note}>
             * Terms and conditions apply. Kindly contact your nearest branch for further assistance.
@@ -116,7 +125,6 @@ export default function BusinessLoan() {
         <div className={styles.section}>
           <h2>EMI Calculator</h2>
           <div className={styles.calculator}>
-            {/* Loan Amount Slider */}
             <div className={styles.inputGroup}>
               <label>Loan Amount (₹): {formatCurrency(loanAmount)}</label>
               <input
@@ -129,14 +137,10 @@ export default function BusinessLoan() {
               />
             </div>
 
-            {/* Interest Rate Slider */}
-           {/* Interest Rate Fixed */}
-<div className={styles.inputGroup}>
-  <label>Interest Rate (%): 12</label>
-</div>
+            <div className={styles.inputGroup}>
+              <label>Interest Rate (%): {interestRate}</label>
+            </div>
 
-
-            {/* Tenure Slider */}
             <div className={styles.inputGroup}>
               <label>Tenure (Months): {tenure}</label>
               <input
@@ -149,7 +153,6 @@ export default function BusinessLoan() {
               />
             </div>
 
-            {/* EMI Results */}
             <div className={styles.emiResult}>
               <p>📅 Monthly EMI: <strong>{formatCurrency(Math.round(emi))}</strong></p>
               <p>💰 Principal Amount: <strong>{formatCurrency(loanAmount)}</strong></p>
@@ -157,7 +160,6 @@ export default function BusinessLoan() {
               <p>💵 Total Payment: <strong>{formatCurrency(Math.round(totalPayment))}</strong></p>
             </div>
 
-            {/* Pie Chart */}
             <div className={styles.chartContainer}>
               <h3>Repayment Breakdown</h3>
               <ResponsiveContainer width="100%" height={300}>
@@ -187,14 +189,14 @@ export default function BusinessLoan() {
           <h2>Explore Other Loans</h2>
           <div className={styles.otherLoans}>
             <div className={styles.loanCard}>
-              <img src="/images/gold-loan.jpg" alt="Gold Loan" />
-              <h3>Gold Loan</h3>
-              <a href="/gold-loan">Know More</a>
-            </div>
-            <div className={styles.loanCard}>
               <img src="/images/vehicle-loan.jpg" alt="Vehicle Loan" />
               <h3>Vehicle Loan</h3>
               <a href="/vehicle-loan">Know More</a>
+            </div>
+            <div className={styles.loanCard}>
+              <img src="/images/business-loan.jpg" alt="Business Loan" />
+              <h3>Business Loan</h3>
+              <a href="/business-loan">Know More</a>
             </div>
           </div>
         </div>

@@ -56,8 +56,8 @@ export default function BasicSavingsAccount() {
           <h2>Account Benefits</h2>
           <div className={styles.benefitsList}>
             <div className={styles.benefit}>Zero minimum balance requirement</div>
-            <div className={styles.benefit}>Free debit card</div>
-            <div className={styles.benefit}>4 free ATM transactions per month</div>
+            {/* <div className={styles.benefit}>Free debit card</div> */}
+            {/* <div className={styles.benefit}>4 free ATM transactions per month</div> */}
             <div className={styles.benefit}>SMS alerts for transactions</div>
             <div className={styles.benefit}>Basic internet banking facility</div>
             <div className={styles.benefit}>Passbook facility available</div>

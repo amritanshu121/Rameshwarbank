@@ -33,7 +33,7 @@ export default function Header() {
           <div className={styles.contactInfo}>
             <div className={styles.contactItem}>
               <Phone size={16} />
-              <span>99203 10335</span>
+              <span>+91 99203 10335</span>
             </div>
             <div className={styles.contactItem}>
               <Mail size={16} />
@@ -75,9 +75,10 @@ export default function Header() {
 
     {/* Right: Other logos (desktop only) */}
     <div className={styles.rightLogos}>
-      <Image src="/up1.png" alt="Logo 1" width={50} height={50} />
-      <Image src="/up2.png" alt="Logo 2" width={50} height={50} />
-      <Image src="/up3.png" alt="Logo 3" width={50} height={50} />
+       <Image src="/DICGCLogo.jpg" alt="Logo 2" width={100} height={100} />
+      <Image src="/qrcode.png" alt="Logo 1" width={100} height={100} />
+     
+      {/* <Image src="/up3.png" alt="Logo 3" width={50} height={50} /> */}
     </div>
 
     {/* Hamburger menu (tablet/mobile) */}
@@ -114,7 +115,7 @@ export default function Header() {
                   <Link href="/about/overview">Bank Overview</Link>
                   <Link href="/about/directors">Board of Directors</Link>
                   <Link href="/about/management-team">Management Team</Link>
-                  <Link href="/about/awards">Awards & Recognition</Link>
+                  {/* <Link href="/about/awards">Awards & Recognition</Link> */}
                 </div>
               )}
             </div>
@@ -138,7 +139,7 @@ export default function Header() {
                   <Link href="/accounts/salary">Salary Account</Link>
                   <Link href="/accounts/basic-savings">Basic-savings Account</Link>
                   <Link href="/accounts/smart-kid">Smart-kid Account</Link>
-                  <Link href="/accounts/corporate">Corporate Account</Link>
+                 
                 </div>
               )}
             </div>
@@ -184,7 +185,10 @@ export default function Header() {
                   <Link href="/loans/education">Educational Loan</Link>
                   <Link href="/loans/personal">Personal Loan</Link>
                   <Link href="/loans/cash">Cash Credit</Link>
+                  <Link href="/loans/overdraft">Overdraft aginst other securities</Link>
                   <Link href="/loans/lic">LIC/NIC Aginst loan</Link>
+                  <Link href="/loans/gold">Gold loan</Link>
+                  <Link href="/loans/businessdailydeposit">Business Daily Deposit</Link>
                 </div>
               )}
             </div>
@@ -192,16 +196,16 @@ export default function Header() {
             {/* SERVICES */}
             <div
               className={styles.dropdown}
-              onMouseEnter={() => handleMouseEnter('services')}
+              onMouseEnter={() => handleMouseEnter('awareness')}
               onMouseLeave={handleMouseLeave}
             >
               <button 
                 className={styles.navLink}
-                onClick={() => handleDropdownToggle('services')}
+                onClick={() => handleDropdownToggle('awareness')}
               >
                 AWARENESS <ChevronDown size={16} />
               </button>
-              {activeDropdown === 'services' && (
+              {activeDropdown === 'awareness' && (
                 <div className={`${styles.dropdownMenu} ${styles.open}`}>
                   <Link href="/awareness/safety">SAFETY MEASURES</Link>
                   <Link href="/awareness/attacks">Types of attacks</Link>
@@ -225,15 +229,15 @@ export default function Header() {
               </button>
               {activeDropdown === 'downloads' && (
                 <div className={`${styles.dropdownMenu} ${styles.open}`}>
-                  <Link href="/downloads/forms">Application Forms</Link>
-                  <Link href="/downloads/annual-reports">Annual Reports</Link>
-                  <Link href="/downloads/interest-rates">Interest Rates</Link>
+                  <Link href="/">Application Forms</Link>
+                  <Link href="/">Annual Reports</Link>
+                  <Link href="/">Interest Rates</Link>
                 </div>
               )}
             </div>
 
-            <Link href="/services-charges" className={styles.navLink}>SERVICE CHARGES</Link>
-            <Link href="/reports" className={styles.navLink}>ANNUAL REPORTS</Link>
+            <Link href="/" className={styles.navLink}>SERVICE CHARGES</Link>
+            <Link href="/" className={styles.navLink}>ANNUAL REPORTS</Link>
           </nav>
         </div>
       </div>
@@ -260,7 +264,7 @@ export default function Header() {
           <Link href="/about/overview" onClick={() => setMobileMenuOpen(false)}>Bank Overview</Link>
           <Link href="/about/directors" onClick={() => setMobileMenuOpen(false)}>Board of Directors</Link>
           <Link href="/about/management-team" onClick={() => setMobileMenuOpen(false)}>Management Team</Link>
-          <Link href="/about/awards" onClick={() => setMobileMenuOpen(false)}>Awards & Recognition</Link>
+          {/* <Link href="/about/awards" onClick={() => setMobileMenuOpen(false)}>Awards & Recognition</Link> */}
         </div>
       )}
     </div>
@@ -284,9 +288,7 @@ export default function Header() {
           <Link href="/accounts/salary" onClick={() => setMobileMenuOpen(false)}>Salary Account</Link>
           <Link href="/accounts/basic-savings" onClick={() => setMobileMenuOpen(false)}>Basic-savings Account</Link>
           <Link href="/accounts/smart-kid" onClick={() => setMobileMenuOpen(false)}>Smart-kid Account</Link>
-          <Link href="/accounts/nro-nre" onClick={() => setMobileMenuOpen(false)}>Nro-Nre Account</Link>
-          <Link href="/accounts/corporate" onClick={() => setMobileMenuOpen(false)}>Corporate Account</Link>
-        </div>
+          </div>
       )}
     </div>
 
@@ -309,8 +311,14 @@ export default function Header() {
           <Link href="/loans/vehicle" onClick={() => setMobileMenuOpen(false)}>Vehicle Loan</Link>
           <Link href="/loans/education" onClick={() => setMobileMenuOpen(false)}>Educational Loan</Link>
           <Link href="/loans/personal" onClick={() => setMobileMenuOpen(false)}>Personal Loan</Link>
+          <Link href="/loans/overdraft" onClick={() => setMobileMenuOpen(false)}>Overdraft aginst other securities</Link>
+           
           <Link href="/loans/cash" onClick={() => setMobileMenuOpen(false)}>Cash Credit</Link>
           <Link href="/loans/lic" onClick={() => setMobileMenuOpen(false)}>LIC/NIC Against Loan</Link>
+          <Link href="/loans/gold" onClick={() => setMobileMenuOpen(false)}>Gold Loan</Link>
+          <Link href="/loans/businessdailydeposit" onClick={() => setMobileMenuOpen(false)}>Business Daily Deposit Loan</Link>
+          
+         
         </div>
       )}
     </div>
@@ -320,15 +328,15 @@ export default function Header() {
     <div className={styles.mobileDropdown}>
       <button 
         className={styles.dropdownButton}
-        onClick={() => setActiveDropdown(activeDropdown === 'deposit' ? null : 'deposit')}
+        onClick={() => setActiveDropdown(activeDropdown === 'deposits' ? null : 'deposits')}
       >
         DEPOSIT
         <ChevronDown 
           size={16} 
-          className={activeDropdown === 'deposit' ? styles.iconRotate : ''} 
+          className={activeDropdown === 'deposits' ? styles.iconRotate : ''} 
         />
       </button>
-      {activeDropdown === 'deposit' && (
+      {activeDropdown === 'deposits' && (
         <div className={styles.dropdownContent}>
           <Link href="/deposits/fixed" onClick={() => setMobileMenuOpen(false)}>Fixed Deposit</Link>
           <Link href="/deposits/recurring" onClick={() => setMobileMenuOpen(false)}>Recurring Deposit</Link>
@@ -336,11 +344,103 @@ export default function Header() {
       )}
     </div>
 
+     {/* Other Mobile Links */}
+     {/* Deposit Dropdown */}
+    <div className={styles.mobileDropdown}>
+      <button 
+        className={styles.dropdownButton}
+        onClick={() => setActiveDropdown(activeDropdown === 'awareness' ? null : 'awareness')}
+      >
+        AWARENESS
+        <ChevronDown 
+          size={16} 
+          className={activeDropdown === 'awareness' ? styles.iconRotate : ''} 
+        />
+      </button>
+      {activeDropdown === 'awareness' && (
+        <div className={styles.dropdownContent}>
+           <Link href="/awareness/safety" onClick={() => setMobileMenuOpen(false)}>SAFETY MEASURES</Link>
+          <Link href="/awareness/attacks" onClick={() => setMobileMenuOpen(false)}>Types of attacks</Link>
+          <Link href="/awareness/guide" onClick={() => setMobileMenuOpen(false)}> RBI Guidelines</Link>
+          <Link href="/awareness/cyberawareness" onClick={() => setMobileMenuOpen(false)}>  Cyber security Awareness</Link>
+          </div>
+      )}
+    </div>
+
+
+    {/* Other Mobile Links */}
+     {/* Deposit Dropdown */}
+    <div className={styles.mobileDropdown}>
+      <button 
+        className={styles.dropdownButton}
+        onClick={() => setActiveDropdown(activeDropdown === 'services-charges' ? null : 'services-charges')}
+      >
+        SERVICES CHARGES
+        <ChevronDown 
+          size={16} 
+          className={activeDropdown === 'services-charges' ? styles.iconRotate : ''} 
+        />
+      </button>
+      {activeDropdown === 'services-charges' && (
+        <div className={styles.dropdownContent}>
+           <Link href="/" onClick={() => setMobileMenuOpen(false)}>SERVICE CHARGES</Link>
+         
+          </div>
+      )}
+    </div>
+
+
+
+     {/* Other Mobile Links */}
+     {/* Deposit Dropdown */}
+    <div className={styles.mobileDropdown}>
+      <button 
+        className={styles.dropdownButton}
+        onClick={() => setActiveDropdown(activeDropdown === 'downloads' ? null : 'downloads')}
+      >
+        DOWNLOADS
+        <ChevronDown 
+          size={16} 
+          className={activeDropdown === 'downloads' ? styles.iconRotate : ''} 
+        />
+      </button>
+      {activeDropdown === 'downloads' && (
+        <div className={styles.dropdownContent}>
+            <Link href="/" onClick={() => setMobileMenuOpen(false)}>Forms</Link>
+            <Link href="/" onClick={() => setMobileMenuOpen(false)}>Forms</Link>
+            <Link href="/" onClick={() => setMobileMenuOpen(false)}>Forms</Link>
+            <Link href="/" onClick={() => setMobileMenuOpen(false)}>Forms</Link>
+         
+          </div>
+      )}
+    </div>
+
+     {/* Other Mobile Links */}
+     {/* Deposit Dropdown */}
+    <div className={styles.mobileDropdown}>
+      <button 
+        className={styles.dropdownButton}
+        onClick={() => setActiveDropdown(activeDropdown === 'reports' ? null : 'reports')}
+      >
+        ANNUAL REPORTS
+        <ChevronDown 
+          size={16} 
+          className={activeDropdown === 'reports' ? styles.iconRotate : ''} 
+        />
+      </button>
+      {activeDropdown === 'reports' && (
+        <div className={styles.dropdownContent}>
+            <Link href="/" onClick={() => setMobileMenuOpen(false)}>ANNUAL REPORTS</Link>
+         
+          </div>
+      )}
+    </div>
+
+
+
+   
     
-    <Link href="/awareness/safety" onClick={() => setMobileMenuOpen(false)}>SAFETY MEASURES</Link>
-    <Link href="/service-charges/internet-banking" onClick={() => setMobileMenuOpen(false)}>SERVICE CHARGES</Link>
-    <Link href="/downloads/forms" onClick={() => setMobileMenuOpen(false)}>DOWNLOADS</Link>
-    <Link href="/reports" onClick={() => setMobileMenuOpen(false)}>ANNUAL REPORTS</Link>
+    
   </div>
 )}
 

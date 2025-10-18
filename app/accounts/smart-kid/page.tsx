@@ -56,7 +56,7 @@ export default function SmartKidAccount() {
           <h2>Account Benefits</h2>
           <div className={styles.benefitsList}>
             <div className={styles.benefit}>No minimum balance requirement</div>
-            <div className={styles.benefit}>Free personalized debit card</div>
+            {/* <div className={styles.benefit}>Free personalized debit card</div> */}
             <div className={styles.benefit}>Birthday and festival gifts</div>
             <div className={styles.benefit}>Educational scholarships opportunities</div>
             <div className={styles.benefit}>Parent-controlled spending limits</div>

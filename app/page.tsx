@@ -10,7 +10,7 @@ export default function Home() {
     <>
       <HeroSection />
       <AwardsSection />
-      <NewAgeBanking />
+      {/* <NewAgeBanking /> */}
      
       <ProductsSection />
       <ServicesGrid />

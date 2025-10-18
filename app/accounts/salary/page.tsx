@@ -56,8 +56,8 @@ export default function SalaryAccount() {
           <h2>Account Benefits</h2>
           <div className={styles.benefitsList}>
             <div className={styles.benefit}>Zero minimum balance with regular salary credit</div>
-            <div className={styles.benefit}>Free unlimited ATM transactions</div>
-            <div className={styles.benefit}>Complimentary debit card with insurance</div>
+            {/* <div className={styles.benefit}>Free unlimited ATM transactions</div> */}
+            {/* <div className={styles.benefit}>Complimentary debit card with insurance</div> */}
             <div className={styles.benefit}>Pre-approved personal loan offers</div>
             <div className={styles.benefit}>Priority customer service</div>
             <div className={styles.benefit}>Special rates on fixed deposits</div>

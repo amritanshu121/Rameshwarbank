@@ -56,18 +56,26 @@ export default function CustomerGrievancesPage() {
           <div className={styles.infoItem}>
             <MapPin size={42} />
             <p>
-              Prathamesh Horizon, New Link Rd, near Don Bosco School, Borivali West, Mumbai, Maharashtra 400091
+              Bank Address 
+Prathamesh Horizon,
+Rameshwar Bank Bus Stop,
+New MHB Colony,
+Ashtavinayak Nagar,
+Borivali West,
+Mumbai, 
+Maharashtra 
+400 091
             </p>
           </div>
 
           <div className={styles.infoItem}>
             <Phone size={22} />
-            <p>+91 9920310335</p>
+            <p>+91 99203 10335</p>
           </div>
 
           <div className={styles.infoItem}>
             <Mail size={22} />
-            <p><a href="mailto:rcbborivali@gmail.com">rcbborivali@gmail.com</a></p>
+            <p><a href="mailto:rcbborivali@rameshwarbank.com">rcbborivali@rameshwarbank.com</a></p>
           </div>
         </div>
 

@@ -1,13 +1,13 @@
 "use client";
-import { Home } from "lucide-react";
+import { Shield } from "lucide-react";
 import styles from "../page.module.css";
 import { useState, useEffect } from "react";
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer, Legend } from "recharts";
 
-export default function BusinessLoan() {
+export default function OverdraftLoan() {
   // EMI Calculator State
   const [loanAmount, setLoanAmount] = useState<number>(500000);
-  const [interestRate, setInterestRate] = useState<number>(12);
+  const interestRate = 12; // Fixed 12%
 
   const [tenure, setTenure] = useState<number>(60); // in months
   const [emi, setEmi] = useState<number>(0);
@@ -43,7 +43,7 @@ export default function BusinessLoan() {
       setTotalPayment(p);
       setTotalInterest(0);
     }
-  }, [loanAmount, interestRate, tenure]);
+  }, [loanAmount, tenure]);
 
   const pieData = [
     { name: "Principal", value: loanAmount },
@@ -58,11 +58,11 @@ export default function BusinessLoan() {
       <div className={styles.hero}>
         <div className={styles.heroContent}>
           <div className={styles.iconContainer}>
-            <Home size={60} />
+           <Shield size={60} />
           </div>
-          <h1 className={styles.title}>Business Loan</h1>
+          <h1 className={styles.title}>Overdraft Against Other Securities</h1>
           <p className={styles.subtitle}>
-            Grow your business with our flexible Business Loans. Funding made easy.
+            Get flexible credit against your valuable assets with our overdraft facility.
           </p>
         </div>
       </div>
@@ -71,7 +71,7 @@ export default function BusinessLoan() {
         {/* Purpose */}
         <div className={styles.section}>
           <h2>Purpose</h2>
-          <p>For starting, expanding, or upgrading your business operations.</p>
+          <p>For meeting short-term business or personal financial needs using other securities as collateral.</p>
         </div>
 
         {/* Loan Details */}
@@ -79,20 +79,20 @@ export default function BusinessLoan() {
           <h2>Loan Details</h2>
           <div className={styles.loanDetails}>
             <div className={styles.detailCard}>
-              <h3>Range of ROI</h3>
-              <p>10.00% to 15.00%</p>
+              <h3>Rate of Interest</h3>
+              <p>12% (Fixed)</p>
             </div>
             <div className={styles.detailCard}>
               <h3>Tenure</h3>
-              <p>Up to 120 months</p>
+              <p>Up to 60 months</p>
             </div>
             <div className={styles.detailCard}>
               <h3>Eligibility</h3>
-              <p>Based on business revenue, repayment capacity, and credit history.</p>
+              <p>Based on the type and value of securities offered, repayment capacity, and credit history.</p>
             </div>
             <div className={styles.detailCard}>
               <h3>Maximum Loan Amount</h3>
-              <p>Rs. 500 lacs (based on eligibility).</p>
+              <p>As per the value of securities provided.</p>
             </div>
           </div>
         </div>
@@ -101,11 +101,11 @@ export default function BusinessLoan() {
         <div className={styles.section}>
           <h2>USP</h2>
           <ul>
-            <li>Quick Disbursal for Business Needs</li>
+            <li>Quick Access to Funds</li>
             <li>Flexible Repayment Options</li>
-            <li>High Loan Eligibility</li>
+            <li>Higher Loan Eligibility Based on Collateral</li>
             <li>Minimal Documentation & Transparent Process</li>
-            <li>Personalized Assistance for Businesses</li>
+            <li>Personalized Assistance for Borrowers</li>
           </ul>
           <p className={styles.note}>
             * Terms and conditions apply. Kindly contact your nearest branch for further assistance.
@@ -129,12 +129,10 @@ export default function BusinessLoan() {
               />
             </div>
 
-            {/* Interest Rate Slider */}
-           {/* Interest Rate Fixed */}
-<div className={styles.inputGroup}>
-  <label>Interest Rate (%): 12</label>
-</div>
-
+            {/* Interest Rate Fixed */}
+            <div className={styles.inputGroup}>
+              <label>Interest Rate (%): {interestRate}</label>
+            </div>
 
             {/* Tenure Slider */}
             <div className={styles.inputGroup}>

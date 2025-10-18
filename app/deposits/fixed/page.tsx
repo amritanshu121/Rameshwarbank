@@ -46,7 +46,7 @@ export default function FixedDeposit() {
           {/* Hero */}
           <div className={styles.heroWrapper}>
             <img
-              src="https://images.pexels.com/photos/3483098/pexels-photo-3483098.jpeg"
+              src="/pixels.jpg"
               alt="Fixed Deposit Investment"
               className={styles.heroImage}
             />
@@ -154,75 +154,44 @@ export default function FixedDeposit() {
           {/* Millionaire Scheme */}
           <div className={styles.millionaireWrapper}>
             <h3 className={styles.millionaireTitle}>
-              MODEL MILLIONAIRE SCHEME (60 Months)
+              DIWALI DHAMAKA 
             </h3>
             <div className={styles.millionaireGrid}>
               <div className={styles.millionaireCard}>
                 <h4 className={styles.millionaireCardTitle}>
-                  General Public - 6.65%
+                  General Public - 7.25%
                 </h4>
                 <p className={styles.millionaireDetails}>
-                  Instalment – Rs.14,032/-
+                  Instalment – Rs.1,00,000/ - Maturity Amount – Rs.1,07,471/
+                
                 </p>
                 <p className={styles.millionaireDetails}>
-                  Maturity Amount – Rs.10,00,089/-
+                 Instalment – Rs.5,00,000/ - Maturity Amount – Rs.5,37,357/-
+                 
+                </p>
+                <p className={styles.millionaireDetails}>
+                 Instalment – Rs.10,00,000/ - Maturity Amount – Rs.10,74,713/-
+                 
                 </p>
               </div>
               <div className={styles.millionaireCard}>
                 <h4 className={styles.millionaireCardTitle}>
-                  Senior Citizens - 6.90%
+                  Senior Citizens - 7.75%
                 </h4>
                 <p className={styles.millionaireDetails}>
-                  Instalment – Rs.13,940/-
+                  Instalment – Rs.1,00,000/ -- Maturity Amount – Rs.1,08,003/
                 </p>
                 <p className={styles.millionaireDetails}>
-                  Maturity Amount – Rs.10,00,111/-
+                  Instalment – Rs.5,00,000/ -- Maturity Amount – Rs.5,40,015/
+                </p>
+                <p className={styles.millionaireDetails}>
+                  Instalment – Rs.10,00,000/ -- Maturity Amount – Rs.10,80,029/
                 </p>
               </div>
             </div>
           </div>
 
-          {/* Terms */}
-          <div className={styles.termsWrapper}>
-            <h3 className={styles.termsTitle}>TERMS & CONDITIONS APPLICABLE</h3>
-            <div className={styles.termsContent}>
-              <p>
-                <strong>a)</strong> Minimum amount acceptable for Fixed Deposits
-                for the tenure of 7-30 days will be Rs.5 lakhs per receipt.
-              </p>
-              <p>
-                <strong>b)</strong> Bulk Fixed Deposits are single Fixed
-                Deposits receipts booked for an amount of Rs.15 Lakhs or more.
-                Bulk rates same as General Public plus 0.25% premium of existing
-                rates.
-              </p>
-              <p>
-                <strong>#</strong> 15 Months fixed deposit - Cumulative & Quarterly
-              </p>
-              <p>
-                <strong>#</strong> 15 Months New FD Scheme not applicable for
-                NRE Deposit.
-              </p>
-              <p>
-                <strong>*</strong> KYC Documents such as Address Proof, ID
-                Proof, PAN Card is compulsory as per RBI Guidelines.
-              </p>
-            </div>
-
-            <h4 className={styles.termsSubtitle}>
-              Rate of Interest for NRE/NRO Accounts:
-            </h4>
-            <div className={styles.termsExtra}>
-              <p>
-                <strong>NRE Deposits</strong> - 1 year to 3 years - Same
-                interest as offered on domestic deposits
-              </p>
-              <p>
-                <strong>NRO Deposits</strong> - 7 days to 5 years - Same
-                interest as offered on domestic deposits
-              </p>
-            </div>
-          </div>
+          
 
           {/* Navigation */}
           <div className={styles.navWrapper}>

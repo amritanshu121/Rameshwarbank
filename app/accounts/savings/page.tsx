@@ -32,7 +32,7 @@ export default function SavingsAccount() {
               <Star className={styles.featureIcon} />
               <div>
                 <h3>Attractive Interest Rates</h3>
-                <p>Earn up to 3.5% per annum on your savings with quarterly compounding</p>
+                <p>Earn up to 2.5% per annum on your savings with quarterly compounding</p>
               </div>
             </div>
             <div className={styles.feature}>
@@ -42,13 +42,7 @@ export default function SavingsAccount() {
                 <p>Your deposits are insured and protected with advanced security measures</p>
               </div>
             </div>
-            <div className={styles.feature}>
-              <Smartphone className={styles.featureIcon} />
-              <div>
-                <h3>Digital Access</h3>
-                <p>24/7 online banking, mobile app, and UPI services for convenient transactions</p>
-              </div>
-            </div>
+           
           </div>
         </div>
 
@@ -56,8 +50,8 @@ export default function SavingsAccount() {
           <h2>Account Benefits</h2>
           <div className={styles.benefitsList}>
             <div className={styles.benefit}>No minimum balance requirement for first 6 months</div>
-            <div className={styles.benefit}>Free debit card with international access</div>
-            <div className={styles.benefit}>Unlimited ATM transactions at our network</div>
+           
+            {/* <div className={styles.benefit}>Unlimited ATM transactions at our network</div> */}
             <div className={styles.benefit}>SMS and email alerts for all transactions</div>
             <div className={styles.benefit}>Doorstep banking services available</div>
             <div className={styles.benefit}>Priority customer service support</div>

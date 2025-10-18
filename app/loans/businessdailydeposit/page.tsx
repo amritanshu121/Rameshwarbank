@@ -4,12 +4,12 @@ import styles from "../page.module.css";
 import { useState, useEffect } from "react";
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer, Legend } from "recharts";
 
-export default function BusinessLoan() {
-  // EMI Calculator State
-  const [loanAmount, setLoanAmount] = useState<number>(500000);
-  const [interestRate, setInterestRate] = useState<number>(12);
+export default function BusinessDailyDeposit() {
+  // EMI / Interest Calculator State
+  const [depositAmount, setDepositAmount] = useState<number>(500000);
+  const interestRate = 18; // Fixed 19% for Business Daily Deposit
 
-  const [tenure, setTenure] = useState<number>(60); // in months
+  const [tenure, setTenure] = useState<number>(12); // in months
   const [emi, setEmi] = useState<number>(0);
   const [totalInterest, setTotalInterest] = useState<number>(0);
   const [totalPayment, setTotalPayment] = useState<number>(0);
@@ -22,31 +22,23 @@ export default function BusinessLoan() {
       maximumFractionDigits: 0,
     }).format(value);
 
-  // Auto calculate EMI whenever values change
+  // Auto calculate interest whenever values change
   useEffect(() => {
     const r = interestRate / 100 / 12; // monthly interest rate
     const n = tenure; // months
-    const p = loanAmount; // principal
+    const p = depositAmount; // principal
 
-    if (r > 0) {
-      const emiValue =
-        (p * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+    const emiValue = (p * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+    const totalPay = emiValue * n;
+    const interest = totalPay - p;
 
-      const totalPay = emiValue * n;
-      const interest = totalPay - p;
-
-      setEmi(emiValue);
-      setTotalPayment(totalPay);
-      setTotalInterest(interest);
-    } else {
-      setEmi(p / n);
-      setTotalPayment(p);
-      setTotalInterest(0);
-    }
-  }, [loanAmount, interestRate, tenure]);
+    setEmi(emiValue);
+    setTotalPayment(totalPay);
+    setTotalInterest(interest);
+  }, [depositAmount, tenure]);
 
   const pieData = [
-    { name: "Principal", value: loanAmount },
+    { name: "Principal", value: depositAmount },
     { name: "Interest", value: totalInterest },
   ];
 
@@ -60,9 +52,9 @@ export default function BusinessLoan() {
           <div className={styles.iconContainer}>
             <Home size={60} />
           </div>
-          <h1 className={styles.title}>Business Loan</h1>
+          <h1 className={styles.title}>Business Daily Deposit</h1>
           <p className={styles.subtitle}>
-            Grow your business with our flexible Business Loans. Funding made easy.
+            Earn daily interest on your business deposits with attractive returns.
           </p>
         </div>
       </div>
@@ -71,28 +63,28 @@ export default function BusinessLoan() {
         {/* Purpose */}
         <div className={styles.section}>
           <h2>Purpose</h2>
-          <p>For starting, expanding, or upgrading your business operations.</p>
+          <p>Ideal for businesses to earn daily interest on deposits while keeping funds accessible.</p>
         </div>
 
-        {/* Loan Details */}
+        {/* Deposit Details */}
         <div className={styles.section}>
-          <h2>Loan Details</h2>
+          <h2>Deposit Details</h2>
           <div className={styles.loanDetails}>
             <div className={styles.detailCard}>
-              <h3>Range of ROI</h3>
-              <p>10.00% to 15.00%</p>
+              <h3>Rate of Interest</h3>
+              <p>18% (Fixed)</p>
             </div>
             <div className={styles.detailCard}>
               <h3>Tenure</h3>
-              <p>Up to 120 months</p>
+              <p>Flexible (Up to 60 months)</p>
             </div>
             <div className={styles.detailCard}>
               <h3>Eligibility</h3>
-              <p>Based on business revenue, repayment capacity, and credit history.</p>
+              <p>Any registered business entity with valid KYC and bank account.</p>
             </div>
             <div className={styles.detailCard}>
-              <h3>Maximum Loan Amount</h3>
-              <p>Rs. 500 lacs (based on eligibility).</p>
+              <h3>Minimum Deposit Amount</h3>
+              <p>Rs. 50,000</p>
             </div>
           </div>
         </div>
@@ -101,47 +93,45 @@ export default function BusinessLoan() {
         <div className={styles.section}>
           <h2>USP</h2>
           <ul>
-            <li>Quick Disbursal for Business Needs</li>
-            <li>Flexible Repayment Options</li>
-            <li>High Loan Eligibility</li>
-            <li>Minimal Documentation & Transparent Process</li>
-            <li>Personalized Assistance for Businesses</li>
+            <li>Daily interest credited to your account</li>
+            <li>Flexible deposit amounts and tenure</li>
+            <li>High interest rate of 19%</li>
+            <li>Minimal documentation & transparent process</li>
+            <li>Instant access to funds if required</li>
           </ul>
           <p className={styles.note}>
             * Terms and conditions apply. Kindly contact your nearest branch for further assistance.
           </p>
         </div>
 
-        {/* EMI Calculator */}
+        {/* EMI / Interest Calculator */}
         <div className={styles.section}>
-          <h2>EMI Calculator</h2>
+          <h2>Interest Calculator</h2>
           <div className={styles.calculator}>
-            {/* Loan Amount Slider */}
+            {/* Deposit Amount Slider */}
             <div className={styles.inputGroup}>
-              <label>Loan Amount (₹): {formatCurrency(loanAmount)}</label>
+              <label>Deposit Amount (₹): {formatCurrency(depositAmount)}</label>
               <input
                 type="range"
                 min="50000"
                 max="50000000"
                 step="50000"
-                value={loanAmount}
-                onChange={(e) => setLoanAmount(Number(e.target.value))}
+                value={depositAmount}
+                onChange={(e) => setDepositAmount(Number(e.target.value))}
               />
             </div>
 
-            {/* Interest Rate Slider */}
-           {/* Interest Rate Fixed */}
-<div className={styles.inputGroup}>
-  <label>Interest Rate (%): 12</label>
-</div>
-
+            {/* Interest Rate Fixed */}
+            <div className={styles.inputGroup}>
+              <label>Interest Rate (%): {interestRate}</label>
+            </div>
 
             {/* Tenure Slider */}
             <div className={styles.inputGroup}>
               <label>Tenure (Months): {tenure}</label>
               <input
                 type="range"
-                min="12"
+                min="1"
                 max="60"
                 step="1"
                 value={tenure}
@@ -149,17 +139,17 @@ export default function BusinessLoan() {
               />
             </div>
 
-            {/* EMI Results */}
+            {/* Calculator Results */}
             <div className={styles.emiResult}>
-              <p>📅 Monthly EMI: <strong>{formatCurrency(Math.round(emi))}</strong></p>
-              <p>💰 Principal Amount: <strong>{formatCurrency(loanAmount)}</strong></p>
+              <p>📅 Monthly Interest: <strong>{formatCurrency(Math.round(emi))}</strong></p>
+              <p>💰 Principal Amount: <strong>{formatCurrency(depositAmount)}</strong></p>
               <p>📈 Total Interest: <strong>{formatCurrency(Math.round(totalInterest))}</strong></p>
               <p>💵 Total Payment: <strong>{formatCurrency(Math.round(totalPayment))}</strong></p>
             </div>
 
             {/* Pie Chart */}
             <div className={styles.chartContainer}>
-              <h3>Repayment Breakdown</h3>
+              <h3>Deposit Breakdown</h3>
               <ResponsiveContainer width="100%" height={300}>
                 <PieChart>
                   <Pie
@@ -182,19 +172,19 @@ export default function BusinessLoan() {
           </div>
         </div>
 
-        {/* Related Loan Options */}
+        {/* Related Deposit / Loan Options */}
         <div className={styles.section}>
-          <h2>Explore Other Loans</h2>
+          <h2>Explore Other Options</h2>
           <div className={styles.otherLoans}>
             <div className={styles.loanCard}>
-              <img src="/images/gold-loan.jpg" alt="Gold Loan" />
-              <h3>Gold Loan</h3>
-              <a href="/gold-loan">Know More</a>
+              <img src="/images/fixed-deposit.jpg" alt="Fixed Deposit" />
+              <h3>Fixed Deposit</h3>
+              <a href="/fixed-deposit">Know More</a>
             </div>
             <div className={styles.loanCard}>
-              <img src="/images/vehicle-loan.jpg" alt="Vehicle Loan" />
-              <h3>Vehicle Loan</h3>
-              <a href="/vehicle-loan">Know More</a>
+              <img src="/images/recurring-deposit.jpg" alt="Recurring Deposit" />
+              <h3>Recurring Deposit</h3>
+              <a href="/recurring-deposit">Know More</a>
             </div>
           </div>
         </div>

@@ -21,7 +21,7 @@ export default function Footer() {
             </p>
             <div className={styles.contactItem}>
               <Phone size={16} />
-              <span>99203 10335</span>
+              <span> +91 99203 10335</span>
             </div>
             <div className={styles.contactItem}>
               <Mail size={16} />
@@ -33,9 +33,15 @@ export default function Footer() {
             <h4 className={styles.columnTitle}>Quick Links</h4>
             <ul className={styles.linkList}>
               <li><Link href="/about/overview">About Us</Link></li>
-              <li><Link href="/branch-locator">Branch Locator</Link></li>
+             <li> <Link 
+                  href="https://maps.app.goo.gl/ZgEQXNdFseNq9SYP6" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+             >
+                  BRANCH LOCATOR
+            </Link></li>
               <li><Link href="/customer-grievance">Customer Grievance</Link></li>
-              <li><Link href="/downloads/annual-reports">Annual Reports</Link></li>
+              <li><Link href="/">Annual Reports</Link></li>
             </ul>
           </div>
 
@@ -56,11 +62,19 @@ export default function Footer() {
             <h4 className={styles.columnTitle}>Contact Info</h4>
             <div className={styles.contactItem}>
               <MapPin size={70} />
-              <span>RAMESHWAR CO-OP BANK LTD, GROUND FLOOR, BELOW SAILEE HOSPITAL, NEW MHB LINK ROAD, NEW LINK ROAD, BORIVALI WEST, MUMBAI - 400092</span>
+              <span>Bank Address 
+Prathamesh Horizon,
+Rameshwar Bank Bus Stop,
+New MHB Colony,
+Ashtavinayak Nagar,
+Borivali West,
+Mumbai, 
+Maharashtra 
+400 091</span>
             </div>
             <div className={styles.contactItem}>
               <Clock size={26} />
-              <span>Morning : 10:00 AM - 1:30 PM<br />Afternoon: 3:00 pm - 6:00 PM <br/>Bank remain closed on the 2nd and 4th Saturday of every month</span>
+              <span>Morning : 10:00 AM - 1:30 PM<br />Afternoon: 3:00 PM - 6:00 PM <br/>Bank remain closed on the 2nd and 4th Saturday of every month</span>
             </div>
           </div>
         </div>
@@ -69,9 +83,9 @@ export default function Footer() {
           <div className={styles.bottomContent}>
             <p>&copy; 2025 Rameshwar Co-op Bank Ltd. All rights reserved.</p>
             <div className={styles.bottomLinks}>
-              <Link href="/privacy-policy">Privacy Policy</Link>
-              <Link href="/terms-conditions">Terms & Conditions</Link>
-              <Link href="/disclaimer">Disclaimer</Link>
+              <Link href="/">Privacy Policy</Link>
+              <Link href="/">Terms & Conditions</Link>
+              <Link href="/">Disclaimer</Link>
             </div>
           </div>
         </div>
